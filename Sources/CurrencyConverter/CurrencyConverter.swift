@@ -1,17 +1,27 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import Foundation
+import LantanaNetwork
 
-enum Currency {
-    case USD, EUR
+enum Currency: String, Decodable {
+    case usd = "USD"
+    case eur = "EUR"
 }
 
-func convert(_ amount: Double, from currency: Currency) -> (amount: Double, currency: Currency) {
-    switch currency {
-    case .USD:
-        return (amount / 0.9, .EUR)
-    case .EUR:
-        return (amount * 1.1, .USD)
+func convert(_ amount: Double, from fcurrency: Currency) async throws -> Double? {
+    do {
+        let conversionObject: ConversionObject = try await NetworkManager.request(
+            endpoint: CurrenciesAPI.conversion(
+                amount: amount,
+                base: .eur,
+                to: .usd
+            )
+        )
+        return conversionObject.rates?.USD
+    } catch let error {
+        throw error
     }
 }
+
 
