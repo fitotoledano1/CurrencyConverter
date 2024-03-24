@@ -1,0 +1,15 @@
+{
+  "originHash" : "0ea643ef285233660ec8145446a2b69d3e828684ead5ce0e2abe6e781bdc3a20",
+  "pins" : [
+    {
+      "identity" : "lantananetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fitotoledano1/LantanaNetwork",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b20929c9052ba9308479011a7f21e4ac8d10e0ed"
+      }
+    }
+  ],
+  "version" : 3
+}
