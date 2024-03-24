@@ -21,7 +21,10 @@ enum CurrenciesAPI: API {
     }
     
     var path: String {
-        "/latest"
+        switch self {
+        case .conversion(_, _, _):
+            "/latest"
+        }
     }
     
     var parameters: [URLQueryItem] {
@@ -36,6 +39,9 @@ enum CurrenciesAPI: API {
     }
     
     var method: LantanaNetwork.HTTPMethod {
-        .get
+        switch self {
+        case .conversion(_, _, _):
+            .get
+        }
     }
 }
