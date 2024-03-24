@@ -4,7 +4,6 @@ import XCTest
 final class CurrencyConverterTests: XCTestCase {
         
     func testExample() async throws {
-        
         let converted = try! await convert(10.0, from: .usd)
         XCTAssertEqual(converted, 10.823)
     }

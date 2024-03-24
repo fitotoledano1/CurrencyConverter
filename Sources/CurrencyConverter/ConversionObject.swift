@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct ConversionObject: Decodable {
+public struct ConversionObject: Decodable {
     let amount: Double
     let base: Currency
     let date: String
     let rates: ConversionRatesObject?
 }
 
-struct ConversionRatesObject: Decodable {
+public struct ConversionRatesObject: Decodable {
     let USD: Double?
 }

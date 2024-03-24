@@ -4,12 +4,12 @@
 import Foundation
 import LantanaNetwork
 
-enum Currency: String, Decodable {
+public enum Currency: String, Decodable {
     case usd = "USD"
     case eur = "EUR"
 }
 
-func convert(_ amount: Double, from fcurrency: Currency) async throws -> Double? {
+public func convert(_ amount: Double, from fcurrency: Currency) async throws -> Double? {
     do {
         let conversionObject: ConversionObject = try await NetworkManager.request(
             endpoint: CurrenciesAPI.conversion(
@@ -23,5 +23,3 @@ func convert(_ amount: Double, from fcurrency: Currency) async throws -> Double?
         throw error
     }
 }
-
-
