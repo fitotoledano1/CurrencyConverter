@@ -1,3 +1,2 @@
-A package to convert currencies.
-
-It fetches the exchange rate from a REST API and returns the converted value into the desired currency.
+Testing creating packages in Xcode. 
+This project leverages another package of mine, LantanaNetwork, for networking and fetch the latest rate for currency conversion.
